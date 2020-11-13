@@ -5,6 +5,12 @@
  */
 package examen1_jesúsmeraz;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jesús Meraz
@@ -15,6 +21,7 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
      * Creates new form Examen1_JesúsMeraz
      */
     public Examen1_JesúsMeraz() {
+
         initComponents();
     }
 
@@ -27,9 +34,244 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        FM = new javax.swing.ButtonGroup();
+        T_camp = new javax.swing.ButtonGroup();
+        Camp = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        nombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        edad = new javax.swing.JFormattedTextField();
+        femenino = new javax.swing.JRadioButton();
+        masculino = new javax.swing.JRadioButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        arma = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        damage = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        CantidadYei = new javax.swing.JFormattedTextField();
+        V = new javax.swing.JRadioButton();
+        D = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        tipoPeople = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        tipoArma = new javax.swing.JComboBox<>();
+        C = new javax.swing.JRadioButton();
+        S = new javax.swing.JRadioButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Ingrese un nombre: ");
+
+        jLabel2.setText("Edad: ");
+
+        edad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
+        FM.add(femenino);
+        femenino.setText("F");
+
+        FM.add(masculino);
+        masculino.setSelected(true);
+        masculino.setText("M");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setText("Sexo:");
+
+        jLabel3.setText("Arma: ");
+
+        jLabel4.setText("Tipo de arma: ");
+
+        jLabel5.setText("Porcentaje de daño: ");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Tipo de personas: ");
+
+        jLabel6.setText("Cantidad personas desaparecidas por Yei: ");
+
+        jLabel9.setText("Campistas: ");
+
+        CantidadYei.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
+        Camp.add(V);
+        V.setSelected(true);
+        V.setText("Vivos");
+
+        Camp.add(D);
+        D.setText("Desaparecidos");
+
+        jButton1.setText("Agregar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        tipoPeople.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Campistas", "El Tio Yei" }));
+
+        jLabel10.setText("Tipo de campista");
+
+        tipoArma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hacha", "Pistola", "Bate", "Pala", "Sierra eléctrica", "Puños" }));
+        tipoArma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoArmaActionPerformed(evt);
+            }
+        });
+
+        T_camp.add(C);
+        C.setText("Campistas");
+
+        T_camp.add(S);
+        S.setSelected(true);
+        S.setText("Supervisores ");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tipoPeople, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(damage, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(masculino)
+                        .addGap(18, 18, 18)
+                        .addComponent(femenino))
+                    .addComponent(nombre)
+                    .addComponent(edad)
+                    .addComponent(arma)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(V)
+                        .addGap(18, 18, 18)
+                        .addComponent(D))
+                    .addComponent(CantidadYei)
+                    .addComponent(tipoArma, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(S)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(C)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(217, 217, 217))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(masculino)
+                    .addComponent(femenino))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(arma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(tipoArma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(damage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(tipoPeople, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(S)
+                            .addComponent(C))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(V)
+                    .addComponent(D))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(CantidadYei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(25, 25, 25))
+        );
+
+        jTabbedPane1.addTab("Agregar", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 543, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Listar", jPanel2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 543, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Modificar", jPanel3);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 543, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Eliminar", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -37,19 +279,95 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tipoArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoArmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoArmaActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        int edad, porcentaje, cant;
+        String nombre, sexo, Arma, TipoArma, Estado_de_vida = "", TipoCampista, tipoPersona;
+        try {
+            edad = Integer.parseInt(this.edad.getText());
+            nombre = this.nombre.getText();
+            if (masculino.isSelected()) {
+                sexo = "M";
+            } else {
+                sexo = "F";
+            }
+            Arma = this.arma.getText();
+            String ref = (String) tipoArma.getSelectedItem();
+            if (ref.equals("Hacha")) {
+                TipoArma = ref;
+            } else if (ref.equals("Pistola")) {
+                TipoArma = ref;
+            } else if (ref.equals("Bate")) {
+                TipoArma = ref;
+            } else if (ref.equals("Pala")) {
+                TipoArma = ref;
+            } else if (ref.equals("Sierra eléctrica")) {
+                TipoArma = ref;
+            } else if (ref.equals("Puño")) {
+                TipoArma = ref;
+            } else {
+                JOptionPane.showMessageDialog(this, "Ocurrio un error No ha selecionado");
+            }
+            porcentaje = Integer.parseInt(this.damage.getText());
+            String ref2 = (String) tipoPeople.getSelectedItem();
+            if (ref2.equals("Campistas")) {
+                tipoPersona = ref2;
+            } else if (ref2.equals("El Tio Yei")) {
+                tipoPersona = ref2;
+            } else {
+                JOptionPane.showMessageDialog(this, "Ocurrio un error No ha selecionado");
+            }
+            if (S.isSelected()) {
+                TipoCampista = "Supervisores";
+            } else {
+                TipoCampista = "Campistas";
+            }
+            if (V.isSelected()) {
+                Estado_de_vida = "Vivo";
+            } else {
+                Estado_de_vida = "Desaparecido";
+            }
+            cant = Integer.parseInt(this.CantidadYei.getText());
+            if (ref2.equals("Campistas")) {
+                Lista.add(new Campistas(nombre, edad, sexo, Arma, TipoCampista, Estado_de_vida));
+            }else{
+                Lista.add(new ElTioYeiUñasEscondidas(nombre, edad, sexo, Arma, cant));
+            }
+            JOptionPane.showMessageDialog(this, "Contacto almacenado exitosamente");
+            this.edad.setText("");
+            this.nombre.setText("");
+            masculino.setSelected(true);
+            femenino.setSelected(false);
+            this.arma.setText("");
+            this.damage.setText("");
+            S.setSelected(true);
+            C.setSelected(false);
+            V.setSelected(true);
+            D.setSelected(false);
+            this.CantidadYei.setText("");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -87,6 +405,38 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
     }// fin main
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton C;
+    private javax.swing.ButtonGroup Camp;
+    private javax.swing.JFormattedTextField CantidadYei;
+    private javax.swing.JRadioButton D;
+    private javax.swing.ButtonGroup FM;
+    private javax.swing.JRadioButton S;
+    private javax.swing.ButtonGroup T_camp;
+    private javax.swing.JRadioButton V;
+    private javax.swing.JTextField arma;
+    private javax.swing.JTextField damage;
+    private javax.swing.JFormattedTextField edad;
+    private javax.swing.JRadioButton femenino;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JRadioButton masculino;
+    private javax.swing.JTextField nombre;
+    private javax.swing.JComboBox<String> tipoArma;
+    private javax.swing.JComboBox<String> tipoPeople;
     // End of variables declaration//GEN-END:variables
+private ArrayList<Personas> Lista = new ArrayList();
 }
