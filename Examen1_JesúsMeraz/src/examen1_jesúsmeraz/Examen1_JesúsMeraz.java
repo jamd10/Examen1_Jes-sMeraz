@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -64,6 +65,8 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
         C = new javax.swing.JRadioButton();
         S = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ListaSuperHeroes = new javax.swing.JList<>();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
 
@@ -153,7 +156,7 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(CantidadYei, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -175,10 +178,10 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(C)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(210, 210, 210)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(295, 295, 295))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,20 +231,34 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
                     .addComponent(CantidadYei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(jButton1)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Agregar", jPanel1);
+
+        ListaSuperHeroes.setModel(new DefaultListModel());
+        ListaSuperHeroes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaSuperHeroesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(ListaSuperHeroes);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(360, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 484, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(221, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Estadiscas", jPanel2);
@@ -250,11 +267,11 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 699, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 484, Short.MAX_VALUE)
+            .addGap(0, 423, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar", jPanel3);
@@ -263,11 +280,11 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 699, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 484, Short.MAX_VALUE)
+            .addGap(0, 423, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Eliminar", jPanel4);
@@ -298,7 +315,7 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        int edad, porcentaje, cant;
+        int edad, porcentaje, cant = 0;
         String nombre, sexo, Arma, TipoArma, Estado_de_vida = "", TipoCampista, tipoPersona;
         try {
             edad = Integer.parseInt(this.edad.getText());
@@ -331,6 +348,7 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
                 tipoPersona = ref2;
             } else if (ref2.equals("El Tio Yei")) {
                 tipoPersona = ref2;
+                lista.add(new ElTioYeiUñasEscondidas(nombre, edad, sexo, Arma, cant));
             } else {
                 JOptionPane.showMessageDialog(this, "Ocurrio un error No ha selecionado");
             }
@@ -339,17 +357,20 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
             } else {
                 TipoCampista = "Campistas";
             }
+            cant = Integer.parseInt(this.CantidadYei.getText());
             if (V.isSelected()) {
                 Estado_de_vida = "Vivo";
+                vivos.add(new Campistas(nombre, edad, sexo, Arma, TipoCampista, Estado_de_vida));
             } else {
                 Estado_de_vida = "Desaparecido";
+                des.add(new Campistas(nombre, edad, sexo, Arma, TipoCampista, Estado_de_vida));
             }
-            cant = Integer.parseInt(this.CantidadYei.getText());
             if (ref2.equals("Campistas")) {
-                Lista.add(new Campistas(nombre, edad, sexo, Arma, TipoCampista, Estado_de_vida));
+                lista.add(new Campistas(nombre, edad, sexo, Arma, TipoCampista, Estado_de_vida));
             } else {
-                Lista.add(new ElTioYeiUñasEscondidas(nombre, edad, sexo, Arma, cant));
+                lista.add(new ElTioYeiUñasEscondidas(nombre, edad, sexo, Arma, cant));
             }
+
             JOptionPane.showMessageDialog(this, "Contacto almacenado exitosamente");
             this.edad.setText("");
             this.nombre.setText("");
@@ -368,6 +389,10 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void ListaSuperHeroesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaSuperHeroesMouseClicked
+     
+    }//GEN-LAST:event_ListaSuperHeroesMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -382,16 +407,24 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
                 if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Examen1_JesúsMeraz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Examen1_JesúsMeraz.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Examen1_JesúsMeraz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Examen1_JesúsMeraz.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Examen1_JesúsMeraz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Examen1_JesúsMeraz.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Examen1_JesúsMeraz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Examen1_JesúsMeraz.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -409,6 +442,7 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField CantidadYei;
     private javax.swing.JRadioButton D;
     private javax.swing.ButtonGroup FM;
+    private javax.swing.JList<String> ListaSuperHeroes;
     private javax.swing.JRadioButton S;
     private javax.swing.ButtonGroup T_camp;
     private javax.swing.JRadioButton V;
@@ -431,11 +465,16 @@ public class Examen1_JesúsMeraz extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JRadioButton masculino;
     private javax.swing.JTextField nombre;
     private javax.swing.JComboBox<String> tipoArma;
     private javax.swing.JComboBox<String> tipoPeople;
     // End of variables declaration//GEN-END:variables
-private ArrayList<Personas> Lista = new ArrayList();
+    private ArrayList<Personas> lista = new ArrayList();
+    private ArrayList<Campistas> vivos = new ArrayList();
+    private ArrayList<Campistas> des = new ArrayList();
+    private ArrayList<ElTioYeiUñasEscondidas> Yei = new ArrayList();
+
 }
